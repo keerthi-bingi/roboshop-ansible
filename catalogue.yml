@@ -12,21 +12,21 @@
   
   - name: Create system user
     ansible.builtin.user: 
-    name: roboshop
-    system: true
-    home: /app
-    shell: /sbin/nologin
-    comment: "roboshop system user"
+      name: roboshop
+      system: true
+      home: /app
+      shell: /sbin/nologin
+      comment: "roboshop system user"
 
   - name: delete app directory
     ansible.builtin.file: 
-    path: /app
-    state: absent
+      path: /app
+      state: absent
 
   - name: create app directory
     ansible.builtin.file: 
-    path: /app
-    state: directory
+      path: /app
+      state: directory
 
   - name: delete catalogue zip file
     ansible.builtin.file:
