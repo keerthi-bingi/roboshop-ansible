@@ -63,10 +63,6 @@
     ansible.builtin.systemd_service:
       daemon_reload: true
 
-  - name: check schema loaded
-    ansible.builtin.command: mysql -h "{{ MYSQL_HOST }}" -uroot -pRoboShop@1 -e 'use cities'
-    register: mysql_output
-
   - name: install dependencie
     ansible.builtin.pip:
       name: "{{ item }}"
