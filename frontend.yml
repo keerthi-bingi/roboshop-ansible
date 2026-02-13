@@ -29,6 +29,11 @@
       dest: /usr/share/nginx/html
       remote_src: yes
 
+  - name: Remove default code
+    ansible.builtin.file:
+      path: /etc/nginx/nginx.conf
+      state: absent
+
   - name: Create reverse proxy
     ansible.builtin.template:
       src: nginx.conf
